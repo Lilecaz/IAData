@@ -52,4 +52,3 @@ sample_df['EmploymentStatus'] = label_encoder.transform(sample_df['EmploymentSta
 # Make predictions for sample applications
 predictions = model.predict(sample_df)
 print("Predictions for sample applications:", predictions)
-# Output: 
