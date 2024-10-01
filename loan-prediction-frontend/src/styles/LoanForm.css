@@ -1,71 +1,136 @@
-/* src/components/LoanForm.css */
-
-.loan-form-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-}
-
-.loan-form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.loan-form-container form {
+/* Conteneur général de la page */
+.loan-form-page {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    height: 100vh;
+    background-color: #f8f9fa;
 }
 
-.loan-form-container input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.loan-form-container input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.loan-form-container button {
-    padding: 12px;
-    font-size: 16px;
+/* Sidemenu pour les individus */
+.side-menu {
+    width: 250px;
     background-color: #007bff;
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.side-menu h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.side-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #0056b3;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+    text-align: left;
 }
 
-.loan-form-container button:hover {
+.side-menu button:hover {
+    background-color: #004080;
+}
+
+/* Conteneur du formulaire */
+.form-container {
+    flex-grow: 1;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ajouté pour espacer le contenu */
+    height: 100%;
+    /* Prendre toute la hauteur */
+}
+
+/* Conteneur du formulaire avec défilement */
+.form-content {
+    overflow-y: auto;
+    /* Gérer le débordement */
+    margin-bottom: 20px;
+    /* Espacement pour le bouton */
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Formulaire en deux colonnes */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-column {
+    width: 48%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Bouton d'envoi */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.loan-form-container h3 {
-    text-align: center;
+/* Résultats */
+.results {
     margin-top: 20px;
-    font-size: 18px;
-    color: #333;
+    /* Espacement entre le formulaire et les résultats */
 }
 
-.loan-form-container select {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    box-sizing: border-box;
-    width: 100%;
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-button.modified {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        background-color: #4CAF50;
+    }
+
+    50% {
+        background-color: #FF0000;
+    }
+
+    /* Couleur de clignotement */
+    100% {
+        background-color: #4CAF50;
+    }
 }
