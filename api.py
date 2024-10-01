@@ -41,6 +41,11 @@ class LoanApplication(BaseModel):
     MonthlyLoanPayment: float
     TotalDebtToIncomeRatio: float  # Ratio Dette/Revenu
 
+
+@app.get("/")
+def read_root():
+    return {"message": "Bienvenue sur l'API de prédiction de prêt!"}
+
 @app.post("/predict_loan_approval/")
 def predict_loan_approval(application: LoanApplication):
     input_data = pd.DataFrame([application.dict()])
@@ -52,3 +57,4 @@ def predict_risk_score(application: LoanApplication):
     input_data = pd.DataFrame([application.dict()])
     risk_score = regressor.predict(input_data)
     return {"RiskScore": risk_score[0]}
+
