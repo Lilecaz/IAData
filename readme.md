@@ -16,7 +16,12 @@ pip --version
 Installez les dépendances nécessaires en utilisant `pip` :
 
 ```sh
-pip install fastapi uvicorn joblib pandas
+pip install pandas seaborn matplotlib scikit-learn numpy joblib
+```
+ou
+
+```sh
+pip install -r requirements.txt
 ```
 
 ## Démarrer l'API
