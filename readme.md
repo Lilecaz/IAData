@@ -16,7 +16,7 @@ pip --version
 Installez les dépendances nécessaires en utilisant `pip` :
 
 ```sh
-pip install pandas seaborn matplotlib scikit-learn numpy joblib
+pip install pandas seaborn matplotlib scikit-learn numpy joblib fastapi uvicorn
 ```
 ou
 
