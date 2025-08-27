@@ -1,12 +1,24 @@
+import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import joblib
 import pandas as pd
+    
 
 # Charger les modèles
-clf = joblib.load('./oldVersions/model_filtered_classification.pkl')
-regressor = joblib.load('./oldVersions/regressor.pkl')
+try:
+    clf = joblib.load('./oldVersions/model_filtered_classification.pkl')
+except Exception as e:
+    logging.error(f"Erreur de chargement du modèle de classification: {e}")
+    clf = None
+
+try:
+    regressor = joblib.load('./oldVersions/regressor.pkl')
+except Exception as e:
+    logging.error(f"Erreur de chargement du modèle de régression: {e}")
+    regressor = None
+
 app = FastAPI()
 
 
