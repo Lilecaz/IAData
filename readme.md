@@ -26,7 +26,9 @@ pip install -r requirements.txt
 
 ## Démarrer l'API
 
-Pour démarrer l'API FastAPI, exécutez la commande suivante :
+Avant de démarrer l'API FastAPI, assurez-vous d'avoir généré le fichier `.pkl` du modèle. Pour cela, ouvrez et exécutez le notebook `lastModel.ipynb` afin de créer le fichier du modèle entraîné.
+
+Une fois le fichier `.pkl` généré, vous pouvez démarrer l'API FastAPI en exécutant l'une des commandes suivantes :
 
 ```sh
 uvicorn api:app --reload

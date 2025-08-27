@@ -5,17 +5,14 @@ import joblib
 import pandas as pd
 
 # Charger les modèles
-clf = joblib.load('model_filtered_classification.pkl')
-regressor = joblib.load('regressor.pkl')
-
+clf = joblib.load('./oldVersions/model_filtered_classification.pkl')
+regressor = joblib.load('./oldVersions/regressor.pkl')
 app = FastAPI()
 
-# Configurer CORS pour permettre les requêtes du front-end (http://localhost:3000/)
-origins = ["http://localhost:3000", "http://127.0.0.1:3000"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
